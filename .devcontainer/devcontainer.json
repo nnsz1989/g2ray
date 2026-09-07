@@ -12,7 +12,7 @@
       "version": "latest"
     }
   },
-  "postCreateCommand": "sudo nohup /usr/local/bin/xray run -c /etc/xray/g2ray.json > /var/log/xray.log 2>&1 &",
+  "postCreateCommand": "sudo nohup /usr/local/bin/xray run -c /etc/xray/g2ray.json > /var/log/xray.log 2>&1 & sleep 5 && gh codespace ports visibility 443:public -c $CODESPACE_NAME",
   "portsAttributes": {
     "443": {
       "label": "g2ray",
